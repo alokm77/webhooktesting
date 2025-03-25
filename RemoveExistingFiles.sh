@@ -1,5 +1,9 @@
 #!/bin/bash
-sudo update -y
-sudo install -y nginx
+sudo apt update -y
+sudo apt install -y nginx
 rm -rf /usr/share/nginx/html/index.html
-service nginx start
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+# Confirm status
+sudo systemctl status nginx --no-pager
